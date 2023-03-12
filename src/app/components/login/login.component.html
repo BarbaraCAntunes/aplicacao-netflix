@@ -1,11 +1,13 @@
 <div class="login-page">
   <div class="login-box">
     <h1>Login</h1>
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+      <input type="email" id="email" name="email" placeholder="Digite seu email" formControlName="email" required>
       <label for="password">Senha:</label>
-      <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      <input type="password" id="password" name="password" placeholder="Digite sua senha" formControlName="password" required>
+      <div *ngIf="errorMsg" class="error-msg">{{errorMsg}}</div>
+        <br>
       <div class="form-links">
         <a href="#">Esqueceu sua senha?</a>
         <span>|</span>

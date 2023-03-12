@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CardSerieComponent } from './components/card-serie/card-serie.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,14 @@ import { LoginComponent } from './components/login/login.component';
     HomeComponent,
     CardSerieComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent, 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
