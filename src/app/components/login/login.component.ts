@@ -1,38 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth-service.service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth-service.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [AuthService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   loginForm!: FormGroup;
-  errorMsg: string = '';
+  errorMsg = '';
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
+    this.createForm();
+  }
 
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['', Validators.required],
+  private createForm() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
-  onSubmit(): void {
-    const { email, password } = this.loginForm.value;
-    this.authService.login(email, password).subscribe({
-      next: () => {
-        localStorage.setItem('logado', 'true');
-        this.router.navigate(['/']);
-      },
-      error: () => {
-        this.errorMsg = 'E-mail ou senha incorretos';
-      },
-    });
+  onSubmit() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
+    this.authService.authenticateUser(email, password)
+      .then(isAuthenticated => {
+        if (isAuthenticated) {
+          this.router.navigateByUrl('/home');
+        } else {
+          this.errorMsg = 'Email ou senha incorretos.';
+        }
+      });
   }
-  
 }

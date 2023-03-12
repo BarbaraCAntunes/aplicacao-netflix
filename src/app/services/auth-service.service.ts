@@ -1,25 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private tokenKey = 'auth_token';
 
-  private apiUrl = 'http://localhost:3000';
+  constructor() { }
 
-  constructor(private http: HttpClient) { }
-
-  login(email: string, password: string) {
-    return this.http.post<any>(`${this.apiUrl}/login`, { email, password });
+  authenticateUser(email: string, password: string): Promise<boolean> {
+    if (email === 'barbaracantunes@gmail.com' && password === '1234') {
+      localStorage.setItem(this.tokenKey, 'my_auth_token');
+      return Promise.resolve(true);
+    } else {
+      return Promise.resolve(false);
+    }
   }
 
-  logout() {
-    localStorage.removeItem('logado');
+  isLoggedIn(): boolean {
+    return localStorage.getItem(this.tokenKey) !== null;
   }
 
-  isLoggedIn() {
-    return !!localStorage.getItem('logado');
+  logout(): void {
+    localStorage.removeItem(this.tokenKey);
   }
-
 }
