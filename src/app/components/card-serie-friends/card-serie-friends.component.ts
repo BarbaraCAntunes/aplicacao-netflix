@@ -4,7 +4,7 @@ import { SeriesService, Serie } from '../../services/series.service';
 @Component({
   selector: 'app-card-serie-friends',
   templateUrl: './card-serie-friends.component.html',
-  styleUrls: ['./card-serie-friends.component.css']
+  styleUrls: ['./card-serie-friends.component.scss']
 })
 export class CardSerieFriendsComponent implements OnInit {
   serie: Serie | undefined;
