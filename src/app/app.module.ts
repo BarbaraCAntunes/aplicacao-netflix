@@ -13,6 +13,7 @@ import { CardSerieHpComponent } from './components/card-serie-hp/card-serie-hp.c
 import { RouterModule, Routes } from '@angular/router';
 import { SeriesService } from './services/series.service';
 import { AuthGuard } from './services/auth-guard.service';
+import { CardSeriesTlouComponent } from './components/card-series-tlou/card-series-tlou.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
     LoginComponent,
     CardSerieMfComponent,
     CardSerieHpComponent,
+    CardSeriesTlouComponent,
   ],
   imports: [
     BrowserModule,

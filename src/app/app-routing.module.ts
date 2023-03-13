@@ -6,6 +6,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { CardSerieFriendsComponent } from './components/card-serie-friends/card-serie-friends.component';
 import { CardSerieMfComponent } from './components/card-serie-mf/card-serie-mf.component';
 import { CardSerieHpComponent } from './components/card-serie-hp/card-serie-hp.component';
+import { CardSeriesTlouComponent } from './components/card-series-tlou/card-series-tlou.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'serie/friends', component: CardSerieFriendsComponent, canActivate: [AuthGuard] },
   { path: 'serie/modern-family', component: CardSerieMfComponent, canActivate: [AuthGuard] },
   { path: 'serie/harry-potter', component: CardSerieHpComponent, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: '' }
+  { path: 'serie/the-last-of-us', component: CardSeriesTlouComponent, canActivate: [AuthGuard] },
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
