@@ -6,16 +6,16 @@
   position: relative;
   height: 0;
   padding-bottom: 56.25%;
-  }
-  
-  .trailer video {
+}
+
+.trailer video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  }
-  
+}
+
 .container {
   max-width: 1280px;
   margin: auto;
@@ -25,18 +25,20 @@
 .title {
   margin-top: 40px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .card-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .card {
+  width: 25%;
   margin: 10px;
-  max-width: 300px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -47,6 +49,19 @@
 
 .card-img-top {
   object-fit: cover;
-  height: 400px;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
+}
+
+.card-body {
+  text-align: center;
+  background-color: #fff;
+  padding: 0;
+  border: none;
+}
+
+.card-title,
+.card-text {
+  display: none;
 }
