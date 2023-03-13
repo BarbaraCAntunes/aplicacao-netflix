@@ -12,11 +12,6 @@
   z-index: 999;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo img {
   height: 60px;
 }
@@ -40,9 +35,20 @@
   color: gray;
 }
 
-.search {
-  display: flex;
-  align-items: center;
+.logout a {
+  background-color: transparent;
+  padding-right: 25px;
+  text-decoration: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 17px;
+}
+
+.logout a:hover {
+  color: gray;
 }
 
 .search input[type="text"] {
@@ -73,5 +79,3 @@
 .search button:hover i {
   color: white;
 }
-
-

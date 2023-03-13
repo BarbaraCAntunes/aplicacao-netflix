@@ -14,6 +14,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SeriesService } from './services/series.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { CardSeriesTlouComponent } from './components/card-series-tlou/card-series-tlou.component';
+import { AuthService } from './services/auth-service.service';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -42,7 +44,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SeriesService, AuthGuard],
+  providers: [SeriesService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

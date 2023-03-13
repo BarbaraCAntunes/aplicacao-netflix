@@ -1,8 +1,8 @@
-<div class="menu">
+<div *ngIf="authService.isAuthenticated$ | async" class="menu">
   <div class="logo">
     <img src="assets/logo.gif" alt="Logo" title="logo" height="60px" />
   </div>
-    <div class="buttons">
+  <div class="buttons">
     <button routerLink="/home">Início</button>
     <button>Séries</button>
     <button>Filmes</button>
@@ -14,4 +14,7 @@
     <input type="text" placeholder="Pesquisar..." />
     <button><i class="fa fa-search"></i></button>
   </div>
+  <div class="logout">
+    <a href="#" (click)="logout()">Sair</a>
   </div>
+</div>
