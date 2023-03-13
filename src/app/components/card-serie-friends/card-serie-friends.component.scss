@@ -41,3 +41,34 @@
   color: #000;
   text-shadow: 1px 1px 1px #fff;
 }
+
+.trailer-info {
+  position:inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+.trailer-info button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.trailer-info button:hover {
+  background-color: gray;
+}
