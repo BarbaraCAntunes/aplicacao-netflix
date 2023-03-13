@@ -10,4 +10,5 @@ Trata-se de um projeto desenvolvido na nona semana do módulo 01 do curso DEVin[
 * Angular CLI version 15.1.5. 
 * HTML, CSS, TS 
 
-## Autoria 👩‍💻 ' Desenvolvido por Barbara Antunes em 12/03/2023.
+## Autoria👩‍💻 
+Desenvolvido por Barbara Antunes em 12/03/2023.
