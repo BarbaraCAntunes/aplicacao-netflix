@@ -6,49 +6,67 @@
   color: white;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 60px;
-  z-index: 9999
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 999;
 }
 
 .logo {
-  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
 }
 
 .buttons {
   display: flex;
-  margin-left: 10px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  gap: 10px;
 }
 
 .buttons button {
-  margin-right: 10px;
-  background: transparent;
+  background-color: transparent;
   color: white;
   border: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 17px;
 }
 
+
 .buttons button:hover {
-  color: grey;
+  color: gray;
 }
 
 .search {
   display: flex;
-  margin-right: 20px;
+  align-items: center;
 }
 
-.search input {
-  border: none;
+.search input[type="text"] {
   background-color: transparent;
   color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 5px;
+  margin-right: 10px;
 }
 
 .search button {
-  border: none;
   background-color: transparent;
-  color: white;
-  margin-left: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
+.search button i {
+  color: gray;
+  font-size: 18px;
+}
 
+.search button:hover i {
+  color: white;
+}

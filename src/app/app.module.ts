@@ -4,27 +4,43 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { CardSerieComponent } from './components/card-serie/card-serie.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CardSerieFriendsComponent } from './components/card-serie-friends/card-serie-friends.component';
+import { CardSerieMfComponent } from './components/card-serie-mf/card-serie-mf.component';
+import { CardSerieHpComponent } from './components/card-serie-hp/card-serie-hp.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SeriesService } from './services/series.service';
+import { AuthGuard } from './services/auth-guard.service';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'serie/friends', component: CardSerieFriendsComponent, canActivate: [AuthGuard] },
+  { path: 'serie/modern-family', component: CardSerieMfComponent, canActivate: [AuthGuard] },
+  { path: 'serie/harry-potter', component: CardSerieHpComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CardSerieComponent,
     MenuComponent,
-    LoginComponent, 
-
+    LoginComponent,
+    CardSerieMfComponent,
+    CardSerieHpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     ReactiveFormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [SeriesService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

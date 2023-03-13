@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardSerieComponent } from './card-serie.component';
+import { CardSerieMfComponent } from './card-serie-mf.component';
 
-describe('CardSerieComponent', () => {
-  let component: CardSerieComponent;
-  let fixture: ComponentFixture<CardSerieComponent>;
+describe('CardSerieMfComponent', () => {
+  let component: CardSerieMfComponent;
+  let fixture: ComponentFixture<CardSerieMfComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardSerieComponent ]
+      declarations: [ CardSerieMfComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CardSerieComponent);
+    fixture = TestBed.createComponent(CardSerieMfComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
