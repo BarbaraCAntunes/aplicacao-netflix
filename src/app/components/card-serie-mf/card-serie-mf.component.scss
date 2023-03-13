@@ -1,0 +1,65 @@
+.card-serie-friends {
+  background-color: black;
+}
+
+.trailer {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.trailer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.episode h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-left: 20px;
+}
+.episode-list {
+  max-width: 1280px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+.episode-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 200px;
+  margin-bottom: 20px; 
+  transition: transform 0.3s ease-in-out;
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.episode-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.episode-card:hover {
+  transform: scale(1.2); 
+}
+
+
+.episode-card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
