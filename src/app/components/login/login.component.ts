@@ -40,6 +40,7 @@ export class LoginComponent {
           this.router.navigateByUrl('/home');
         } else {
           this.errorMsg = 'Email ou senha incorretos.';
+          console.log("erro")
         }
       });
   }
